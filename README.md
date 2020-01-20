@@ -1,7 +1,7 @@
 # MemoryHackOSX
 A memory read/write wrapper assembled for darwin/osx systems
 
-# Firstly call the imports
+<code>
 #include <iostream>
 #include <stdio.h>
 #include <mach/mach_init.h>
@@ -13,7 +13,6 @@ A memory read/write wrapper assembled for darwin/osx systems
 #include <Security/Authorization.h>
 using namespace std;
 
-# get task_for_pid for reading/writing. (a type of openProcess for windows)
 
 kern_return_t kret = task_for_pid(current_task(), pid, &task);
     if(!kret==KERN_SUCCESS){
@@ -22,5 +21,9 @@ kern_return_t kret = task_for_pid(current_task(), pid, &task);
          printf("success kern");
     }
     
- # vm_protect get all access from memory address
+ vm_protect get all access from memory address
  vm_protect(task,address, 12, 0, VM_PROT_READ | VM_PROT_WRITE | VM_PROT_ALL);
+ </code>
+ &nbsp;
+ <footer>
+<img src="https://cdn.discordapp.com/attachments/667285201998839819/668895183613591592/jj.png">
